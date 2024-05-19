@@ -6,17 +6,21 @@ const config = {
   ballMaxSpeed: 1000,
   ballMinSpeed: 500,
   barSpeed: 750,
-  randomness: 1,
+  randomness: 0,
   deviation: 0.5, // on how much rad ball should deviate a bit randomly
   direction: randomDirection(), // initial direction of the ball
   interval: 2500, // interval before setting up a new game
   speedMultiplier: 1.1, // by how much speed should increase
   enableRandomDirBindings: "true", // enable/disable listeners to randomize ball's direction
+  ballRadius: 25, // radius of the ball
+  barsHeight: 100, // height of the bars
+  barsXGap: 100, // Gap between bars and screen ends
 };
 
 params.forEach((para) => {
   const [key, val] = para.split("=");
-  config[key] = val;
+  if (isFinite(val)) config[key] = Number(val);
+  else config[key] = val;
 
   if (key === "direction") config.direction = (val / 180) * Math.PI;
 });
@@ -38,15 +42,15 @@ const ball = {
     x: 0,
     y: 0,
   },
-  radius: 25,
+  radius: config.ballRadius,
   speed: 500,
   direction: 0,
 };
 
 const bars = {
-  height: 100,
+  height: config.barsHeight,
   width: 10,
-  xGap: 50,
+  xGap: config.barsXGap,
   yOf: {
     red: 0,
     blue: 0,

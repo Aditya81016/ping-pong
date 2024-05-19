@@ -20,11 +20,14 @@ Available constants are:
 | ballMaxSpeed | number | 1000 | the max speed ball can have |
 | ballMinSpeed | number | 500 | the min speed ball can have |
 | barSpeed | number | 750 | the speed of red and blue bars |
-| randomness | 0 to 1 | 1 | randomness by which ball can deviate |
+| randomness | 0 to 1 | 0 | randomness by which ball can deviate |
 | deviation | radian | 0.5 | on how much rad ball should deviate a bit randomly |
 | direction | degree | random | initial direction of the ball |
 | interval | miliseconds | 2500 | interval before setting up a new game |
 | speedMultiplier | number | 1.1 | by how much speed should increase |
 | enableRandomDirBindings | boolean | true | enable/disable listeners to randomize ball's direction |
+| ballRadius| number | 25 | radius of the ball |
+| barsHeight | number | 100 | height of the bars |
+| barsXGap | number | 100 | Gap between bars and screen ends |
 
 Eg: https://aditya81016.github.io/ping-pong?randomness=0&interval=1000&ballMinSpeed=1000&ballMaxSpeed=1000

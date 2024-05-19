@@ -22,7 +22,11 @@ document.body.addEventListener("fullscreenchange", () => {
 
 document.querySelector("button").addEventListener("click", () => {
   document.body.requestFullscreen();
+  screen.orientation.lock("landscape");
   document.querySelector("button").style.display = "none";
+  setTimeout(() => {
+    setup();
+  }, 500);
 });
 
 document.body.addEventListener("click", () => {
