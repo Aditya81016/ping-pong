@@ -26,7 +26,7 @@ document.querySelector("button").addEventListener("click", () => {
 });
 
 document.body.addEventListener("click", () => {
-  if (data.state === "playing") {
+  if (data.state === "playing" && config.enableRandomDirBindings === "true") {
     ball.direction = randomDirection();
     ball.speed = ball.speed * config.speedMultiplier;
   }
@@ -48,7 +48,10 @@ document.addEventListener("keydown", (e) => {
   if (e.code === "Enter" && data.state === "initial") start();
   if (e.code === "KeyW") bars.offsetOf.red = -offset;
   if (e.code === "KeyS") bars.offsetOf.red = offset;
-  if (e.code === "KeyR" || e.code === "Numpad0") {
+  if (
+    (e.code === "KeyR" || e.code === "Numpad0") &&
+    config.enableRandomDirBindings === "true"
+  ) {
     ball.direction = randomDirection();
     ball.speed = ball.speed * config.speedMultiplier;
   }

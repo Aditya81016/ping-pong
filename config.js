@@ -11,6 +11,7 @@ const config = {
   direction: randomDirection(), // initial direction of the ball
   interval: 2500, // interval before setting up a new game
   speedMultiplier: 1.1, // by how much speed should increase
+  enableRandomDirBindings: "true", // enable/disable listeners to randomize ball's direction
 };
 
 params.forEach((para) => {
