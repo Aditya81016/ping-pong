@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ping Pong</title>
+
+    <style>
+      :root {
+        --background: #111;
+        --foreground: #eee;
+        --red: hsl(0, 70%, 60%);
+        --blue: hsl(220, 90%, 70%);
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+
+      body,
+      #root,
+      canvas {
+        width: 100vw;
+        height: 100dvh;
+        background: var(--background);
+        color: var(--foreground);
+        display: flex;
+      }
+      header {
+        position: fixed;
+        padding: 1rem;
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        font-size: xx-large;
+        font-weight: bolder;
+
+        & > .red {
+          color: var(--red);
+        }
+        & > .blue {
+          color: var(--blue);
+        }
+      }
+
+      button {
+        position: fixed;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0.25rem 0.5rem;
+        border: 1px solid var(--foreground);
+        background: none;
+        color: var(--foreground);
+        border-radius: 0.25rem;
+      }
+
+      #label {
+        position: fixed;
+        bottom: 5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: x-large;
+        font-weight: bolder;
+        color: var(--foreground);
+        text-align: center;
+        width: 100vw;
+
+        & > code {
+          color: var(--foreground);
+          background: var(--background);
+          padding: 0.25rem 0.5rem;
+          border-radius: 0.25rem;
+          border: 1px solid var(--foreground);
+          font-size: large;
+          font-weight: bolder;
+          display: inline-block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <header>
+        <div name="red" class="red">0</div>
+        <div name="blue" class="blue">0</div>
+      </header>
+      <div id="label">Press <code>Enter</code> to start</div>
+      <canvas id="canvas"></canvas>
+      <button>Fullscreen</button>
+    </div>
+    <script src="./main.js" type="module"></script>
+  </body>
+</html>
